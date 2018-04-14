@@ -87,8 +87,9 @@
         var updateHeight = function(height, animate) {
 
             var heightDescription = pgwSlideshow.plugin.find('.ps-caption').height();
-
-            height += heightDescription;
+            if (pgwSlideshow.plugin.find('.ps-caption').is(':visible')) {
+                height += heightDescription;
+            }
 
             // Check maxHeight
             if (pgwSlideshow.config.maxHeight) {
